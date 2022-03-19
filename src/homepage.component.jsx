@@ -7,7 +7,7 @@ const HomePage = () => (
     <div className="directory-menu">
       <div className="menu-item">
         <div className="content">
-          <h1 classname="title">HATS</h1>
+          <h1 classname="title">SHITS</h1>
           <span className="subtitle">SHOP NOW</span>
         </div>
       </div>
