@@ -1,48 +1,23 @@
-import React from "react";
-import logo from "./logo.svg";
-import "./App.css";
+import { Routes, Route } from "react-router-dom";
 
-import HomePage from "./homepage.component";
+import Home from "./routes/home/home.component";
+import Navigation from "./routes/navigation/navigation.component";
+import SignIn from "./routes/sign-in/sign-in.component";
 
-function App() {
+const Shop = () => {
+  return <h2>I am the shop page</h2>;
+};
+
+const App = () => {
   return (
-    <div>
-      <div className="homepage">
-        <div className="directory-menu">
-          <div className="menu-item">
-            <div className="content">
-              <h1 classname="title">HATS</h1>
-              <span className="subtitle">SHOP NOW</span>
-            </div>
-          </div>
-          <div className="menu-item">
-            <div className="content">
-              <h1 classname="title">JACKETS</h1>
-              <span className="subtitle">SHOP NOW</span>
-            </div>
-          </div>
-          <div className="menu-item">
-            <div className="content">
-              <h1 classname="title">SNEAKERS</h1>
-              <span className="subtitle">SHOP NOW</span>
-            </div>
-          </div>
-          <div className="menu-item">
-            <div className="content">
-              <h1 classname="title">WOMENS</h1>
-              <span className="subtitle">SHOP NOW</span>
-            </div>
-          </div>
-          <div className="menu-item">
-            <div className="content">
-              <h1 classname="title">MENS</h1>
-              <span className="subtitle">SHOP NOW</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <Routes>
+      <Route path="/" element={<Navigation />}>
+        <Route index element={<Home />} />
+        <Route path="shop" element={<Shop />} />
+        <Route path="sign-in" element={<SignIn />} />
+      </Route>
+    </Routes>
   );
-}
+};
 
 export default App;
